@@ -1,0 +1,23 @@
+
+<section class="container">
+  <div class="mb-3 ">
+    <button [class]="showActive() ? 'btn btn-primary me-2' : 'btn btn-secondary me-2'" (click)="showActive.set(true)">Activos</button>
+    <button [class]="showActive() ? 'btn btn-secondary me-2': 'btn btn-primary me-2'" (click)="showActive.set(false)">Inactivos</button>
+  </div>
+  
+  <div class=" row">
+    @for(course of filteredCourses(); track $index) {
+      <div class="col-12 col-sm-6 col-md-4 mb-3">
+        <app-tarjet-course-item [course]="course" (delete)="onDeleted($event)" (toggleActive)="onToggleCourse($event)" />
+      </div>
+    }
+  </div>
+</section>
+    
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+
+<div>
+        <h1>{{ isEditMode ? 'Editar Curso': 'Agregar Curso'}}</h1>
+        <div class="mb-4">
+            <label for="nombre" >Agregar: {{name()}}</label>
+            <input
+             type="text" 
+             class="form-control"
+             #strName
+             required
+             [value]="name()"
+             (change)="name.set(strName.value)"
+             (input)="name.set(strName.value)"
+             placeholder=" ejm: Java">
+        </div>
+
+       <div class="mb-4">
+            <label appRequiredAsterisk for="categoria" >Categoria: {{category()}}</label>
+        <input
+         type="text" 
+         class="form-control" required
+         [value]="category()"
+         #strCategory
+         (change)="category.set(strCategory.value)"
+         (input)="category.set(strCategory.value)"
+         placeholder=" ejm: Backend"
+         >
+       </div>
+
+       <div class="mb-4">
+           <label appRequiredAsterisk for="level" >Level</label>
+           <select  class="form-control" #strLevel (change)="level.set(strLevel.value)" required>
+            @for (lvl of levels; track lvl){
+                <option value="{{lvl}}">{{lvl}}</option>
+            }
+           </select>
+       </div>
+
+       <div class="mb-4">
+        <label for="activo">Estado del curso</label>
+        <select class="form-control" #strEstado (change)="active.set(strEstado.value ==='true')">
+            <option value="true">Activo</option>
+            <option value="false">Inactivo</option>
+        </select>
+       </div>
+       
+        <button (click)="onSubmit()"class="btn btn-success w-100" [disabled]="!name() || !category()" >{{ isEditMode ? 'Editar' : 'Agregar'}}</button>
+     </div>

@@ -1,0 +1,24 @@
+
+<section>
+    <div class="container mt-4">
+     @if ( totalCourses() != 0 ) {
+        <div class="container">
+            <h1>Listado de cursos </h1>
+            <p> Cursos totales: {{ totalCourses() }}</p>
+            <select name="category" class="form-control mb-3">Dificultad
+               <option value="Begginer">Principiante</option>
+               <option value="Intermedio">Intermedio</option>
+               <option value="Advnced">Avanzado</option>
+            </select>
+
+        </div>
+         
+         <app-course-list/>
+        }@else{
+            <h1>Aun no tenemos cursos registrados</h1>
+        }
+    </div>
+</section>
+
+
+
