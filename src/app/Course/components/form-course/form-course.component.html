@@ -1,8 +1,8 @@
 
-<div>
+<!-- <div>
         <h1>{{ isEditMode ? 'Editar Curso': 'Agregar Curso'}}</h1>
         <div class="mb-4">
-            <label for="nombre" >Agregar: {{name()}}</label>
+            <label appRequiredAsterisk for="nombre" >Agregar: {{name()}}</label>
             <input
              type="text" 
              class="form-control"
@@ -45,4 +45,66 @@
        </div>
        
         <button (click)="onSubmit()"class="btn btn-success w-100" [disabled]="!name() || !category()" >{{ isEditMode ? 'Editar' : 'Agregar'}}</button>
-     </div>
+</div> -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-4">
+  <h1>{{ isEditMode ? 'Editar Curso' : 'Agregar Curso' }}</h1>
+
+
+  <div class="mb-4">
+    <label appRequiredAsterisk for="nombre" class="form-label">Nombre</label>
+    <input
+      type="text"
+      id="nombre"
+      class="form-control"
+      formControlName="name"
+      placeholder="ejm: Java"
+    />
+    @if (form.get('name')?.invalid && form.get('name')?.touched) {
+        <div class="text-danger mt-1">
+            El nombre debe tener al menos 3 caracteres
+        </div>
+    }
+  </div>
+
+  <!-- Categoría -->
+  <div class="mb-4">
+    <label appRequiredAsterisk for="categoria" class="form-label">Categoría</label>
+    <input
+      type="text"
+      id="categoria"
+      class="form-control"
+      formControlName="category"
+      placeholder="ejm: Backend"
+    />
+    @if (form.get('category')?.invalid && form.get('category')?.touched) {
+  <div class="text-danger mt-1">
+    La categoría es obligatoria
+  </div>
+}
+  </div>
+
+  <!-- Nivel de dificultad -->
+  <div class="mb-4">
+    <label appRequiredAsterisk for="level" class="form-label">Dificultad</label>
+    <select id="level" class="form-select" formControlName="level">
+      @for (lvl of levels; track lvl) {
+        <option [value]="lvl">{{ lvl }}</option>
+      }
+    </select>
+  </div>
+
+  <!-- Estado del curso -->
+  <div class="mb-4">
+    <label for="activo" class="form-label">Estado del curso</label>
+    <select id="activo" class="form-select" formControlName="active">
+      <option [value]="true">Activo</option>
+      <option [value]="false">Inactivo</option>
+    </select>
+  </div>
+
+  <!-- Botón de envío -->
+  <button type="submit" class="btn btn-success w-100" [disabled]="form.invalid">
+    {{ isEditMode ? 'Editar' : 'Agregar' }}
+  </button>
+</form>
+

@@ -1,5 +1,13 @@
 
-<section class="container">
+  <div class="mb-3">
+    <label for="levelSelect" class="form-label">Filtrar por dificultad</label>
+    <select id="levelSelect" class="form-select mb-3" (change)="onLevelChange($event)">
+      <option value="Beginner">Básico</option>
+      <option value="Intermediate">Intermedio</option>
+      <option value="Advanced">Avanzado</option>
+    </select>
+  </div>
+
   <div class="mb-3 ">
     <button [class]="showActive() ? 'btn btn-primary me-2' : 'btn btn-secondary me-2'" (click)="showActive.set(true)">Activos</button>
     <button [class]="showActive() ? 'btn btn-secondary me-2': 'btn btn-primary me-2'" (click)="showActive.set(false)">Inactivos</button>
@@ -10,9 +18,16 @@
       <div class="col-12 col-sm-6 col-md-4 mb-3">
         <app-tarjet-course-item [course]="course" (delete)="onDeleted($event)" (toggleActive)="onToggleCourse($event)" />
       </div>
+    }@empty{
+      <div class="container my-4">
+          <div class="alert alert-warning text-center" role="alert">
+            <h5 class="alert-heading">Sin cursos disponibles</h5>
+            <p class="mb-0">Aún no tenemos cursos {{ showActive() | appBooleanPipe }} en el nivel <strong>{{selectedLevel() | i18nSelect : translate }}</strong>.</p>
+          </div>
+        </div>
     }
   </div>
-</section>
+
     
 
 

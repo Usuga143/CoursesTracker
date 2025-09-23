@@ -1,3 +1,4 @@
+import { level } from './../interfaces/Course.interfaces';
 import { computed, effect, Injectable, signal, WritableSignal } from '@angular/core';
 import { ICourse } from '../interfaces/Course.interfaces';
 import { of } from 'rxjs';
@@ -49,13 +50,12 @@ getCourses() {
 
   
   toggleCourseActive(id: number): void {
-  const updated = this._courses().map(course =>
-    course.id === id ? { ...course, active: !course.active } : course
-  );
-  console.log("Cambie el estado")
-  this._courses.set(updated);
-  this.saveToLocalStorage;
-}
+    const updated = this._courses().map(course =>
+      course.id === id ? { ...course, active: !course.active } : course
+    );
+    this._courses.set(updated);
+    this.saveToLocalStorage;
+  }
 
   
   saveToLocalStorage = effect( () => {
