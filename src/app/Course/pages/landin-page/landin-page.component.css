@@ -1,0 +1,27 @@
+
+
+.font-section{
+    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('../../../../../public/fond.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    height:50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.font-section{
+    h1, p, h5{
+        color: white;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    
+}
+
+.my-card{
+    border: solid rgb(0, 0, 0);
+    border-radius: 2%;
+}

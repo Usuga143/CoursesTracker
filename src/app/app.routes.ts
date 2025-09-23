@@ -1,21 +1,24 @@
 import { Routes } from '@angular/router';
 import { FormCourseComponent } from './Course/components/form-course/form-course.component';
 
+
 export const routes: Routes = [
-    
+     {
+        path: 'landin-page',
+        loadComponent: () => import('./Course/pages/landin-page/landin-page.component')
+    },
     {
         path: 'courses/edit/:id',
         component: FormCourseComponent
     },
     {
         path: 'courses',
-        loadComponent: () => import('./Course/pages/courses/courses.component'),
+        loadComponent: () => import('./Course/pages/courses/courses.component')
     },
     {
         path: 'add',
         loadComponent: () => import('./Course/pages/add-course/add-course.component')
         },
-        
     {
         path: '**',
         redirectTo: 'courses',
