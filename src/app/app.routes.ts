@@ -4,7 +4,7 @@ import { FormCourseComponent } from './Course/components/form-course/form-course
 
 export const routes: Routes = [
      {
-        path: 'landin-page',
+        path: '',
         loadComponent: () => import('./Course/pages/landin-page/landin-page.component')
     },
     {
@@ -21,6 +21,6 @@ export const routes: Routes = [
         },
     {
         path: '**',
-        redirectTo: 'courses',
+        redirectTo: '',
     },
 ];

@@ -1,7 +1,7 @@
 
 
 .font-section{
-    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('../../../../../public/fond.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 255, 85, 0) 1%, rgba(0, 0, 0, 0.5) 100%), url('../../../../../public/fond.jpg');
     background-size: cover;
     background-position: center;
     
@@ -25,3 +25,68 @@
     border: solid rgb(0, 0, 0);
     border-radius: 2%;
 }
+
+/* Fondo animado creado por Copilot*/
+.fondo-bosque {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(120deg, #002400, #004a00, #044620);
+  background-size: 400% 400%;
+  animation: movimientoBosque 15s ease infinite;
+  overflow: hidden;
+}
+
+/* Fondo animado */
+@keyframes movimientoBosque {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Capa 1 de niebla */
+.fondo-bosque::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(circle, rgba(177, 175, 175, 0.164) 0%, transparent 70%);
+  animation: nieblaCapa1 60s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Capa 2 de niebla */
+.fondo-bosque::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.189) 0%, transparent 80%);
+  animation: nieblaCapa2 90s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Movimiento capa 1 */
+@keyframes nieblaCapa1 {
+  0% { transform: translate(0px, 0px); }
+  50% { transform: translate(80px, 40px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/* Movimiento capa 2 */
+@keyframes nieblaCapa2 {
+  0% { transform: translate(0px, 0px); }
+  50% { transform: translate(-60px, 30px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+

@@ -1,87 +1,79 @@
-<div class="vh-100">
-    <section class="font-section ">
-        <div class="text-center">
-            <h5>Bienvenido a nuestra comunidad</h5>
-            <h1 class="text-title">Los mejores cursos para tu futuro!</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nostrum iusto placeat accusantium.</p>
-        </div>
-        <div class="justify-content-center d-flex gap-5 m-3">
-            <button [routerLink]="'courses'" class="btn btn-success btn-lg" >Nuestros Cursos</button>
-            <button [routerLink]="'/add'" class="btn btn-success btn-lg">Agregar cursos</button>
-        </div>
-    </section>
+<div class="fondo-bosque vh-100">
+  <section class="font-section ">
+    <div class="text-center">
+      <h5>Bienvenido a nuestra comunidad</h5>
+      <h1 class="text-title">Los mejores cursos para tu futuro!</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nostrum iusto placeat accusantium.</p>
+    </div>
+    <div class="justify-content-center d-flex gap-5 m-3">
+      <button [routerLink]="'courses'" class="btn btn-success btn-lg" >Nuestros Cursos</button>
+      <button [routerLink]="'/add'" class="btn btn-success btn-lg">Agregar cursos</button>
+    </div>
+  </section>
     
-    <section class="m-5">
-    <div class="container py-5">
-        <div class="title mb-5 ">
-            <h1 class="text-center text-white ">Encuentra cursos en todos los niveles!</h1>
+  <section class="" >
+    <div class="container py-5 bosque">
+      <div class="title mb-5 ">
+        <h1 class="text-center text-white ">Encuentra cursos en todos los niveles!</h1>
+      </div>
+      <div class="d-flex flex-column flex-md-row justify-content-center align-items-stretch gap-4">      
+        <div class="my-card card text-center">
+            <div class="p-4">
+              <svg width="80" height="80" viewBox="0 0 100 100">
+                  <defs>
+                      <radialGradient id="grad-basic" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#4CAF50" />
+                      <stop offset="100%" stop-color="#2E7D32" />
+                      </radialGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="45" fill="url(#grad-basic)" stroke="#1B5E20" stroke-width="3" />
+                  <text x="50%" y="58%" text-anchor="middle" fill="white" font-size="28" font-family="Arial" font-weight="bold">B</text>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Nivel Básico</h5>
+              <p class="card-text">Ideal para quienes inician en programación. Aprende desde cero.</p>
+            </div>
         </div>
-  <div class="d-flex flex-column flex-md-row justify-content-center align-items-stretch gap-4">
+        <div class="my-card card text-center ">
+            <div class="p-4">
+              <svg width="80" height="80" viewBox="0 0 100 100">
+                  <defs>
+                      <radialGradient id="grad-inter" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#FFEB3B" />
+                      <stop offset="100%" stop-color="#FBC02D" />
+                      </radialGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="45" fill="url(#grad-inter)" stroke="#F57F17" stroke-width="3" />
+                  <text x="50%" y="58%" text-anchor="middle" fill="#212121" font-size="28" font-family="Arial" font-weight="bold">I</text>
+              </svg>
 
-    <!-- Card Básico -->
-    <div class="my-card card text-center">
-      <div class="p-4">
-        <svg width="80" height="80" viewBox="0 0 100 100">
-            <defs>
-                <radialGradient id="grad-basic" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#4CAF50" />
-                <stop offset="100%" stop-color="#2E7D32" />
-                </radialGradient>
-            </defs>
-            <circle cx="50" cy="50" r="45" fill="url(#grad-basic)" stroke="#1B5E20" stroke-width="3" />
-            <text x="50%" y="58%" text-anchor="middle" fill="white" font-size="28" font-family="Arial" font-weight="bold">B</text>
-        </svg>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Nivel Intermedio</h5>
+              <p class="card-text">Fortalece tus bases y empieza a construir proyectos reales.</p>
+            </div>
+        </div>
+        <div class="my-card card text-center ">
+            <div class="p-4">
+              <svg width="80" height="80" viewBox="0 0 100 100">
+                  <defs>
+                      <radialGradient id="grad-adv" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#E53935" />
+                      <stop offset="100%" stop-color="#B71C1C" />
+                      </radialGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="45" fill="url(#grad-adv)" stroke="#880E4F" stroke-width="3" />
+                  <text x="50%" y="58%" text-anchor="middle" fill="white" font-size="28" font-family="Arial" font-weight="bold">A</text>
+              </svg>
 
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Nivel Básico</h5>
-        <p class="card-text">Ideal para quienes inician en programación. Aprende desde cero.</p>
-      </div>
-    </div>
-
-    <!-- Card Intermedio -->
-    <div class="my-card card text-center ">
-      <div class="p-4">
-        <svg width="80" height="80" viewBox="0 0 100 100">
-            <defs>
-                <radialGradient id="grad-inter" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#FFEB3B" />
-                <stop offset="100%" stop-color="#FBC02D" />
-                </radialGradient>
-            </defs>
-            <circle cx="50" cy="50" r="45" fill="url(#grad-inter)" stroke="#F57F17" stroke-width="3" />
-            <text x="50%" y="58%" text-anchor="middle" fill="#212121" font-size="28" font-family="Arial" font-weight="bold">I</text>
-        </svg>
-
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Nivel Intermedio</h5>
-        <p class="card-text">Fortalece tus bases y empieza a construir proyectos reales.</p>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Nivel Avanzado</h5>
+              <p class="card-text">Domina estructuras complejas y prepárate para el mundo profesional.</p>
+            </div>
+        </div>
       </div>
     </div>
-
-    <!-- Card Avanzado -->
-    <div class="my-card card text-center ">
-      <div class="p-4">
-        <svg width="80" height="80" viewBox="0 0 100 100">
-            <defs>
-                <radialGradient id="grad-adv" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#E53935" />
-                <stop offset="100%" stop-color="#B71C1C" />
-                </radialGradient>
-            </defs>
-            <circle cx="50" cy="50" r="45" fill="url(#grad-adv)" stroke="#880E4F" stroke-width="3" />
-            <text x="50%" y="58%" text-anchor="middle" fill="white" font-size="28" font-family="Arial" font-weight="bold">A</text>
-        </svg>
-
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Nivel Avanzado</h5>
-        <p class="card-text">Domina estructuras complejas y prepárate para el mundo profesional.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-    </section>
+  </section>
 </div>
